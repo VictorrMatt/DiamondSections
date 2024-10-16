@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Diamond</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
-  <link rel="shortcut icon" href="./assets/diamond.png" type="image/x-icon">
-</head>
-
-<body>
-  <div id="main-section">
+<!-- 
+1. Copie todo o conteúdo abaixo.
+2. Cole-o dentro da tag <body> do seu projeto.
+-->
+<div id="main-section">
     <section id="carousel-section">
       <article>
         <div>
@@ -28,13 +17,13 @@
       </article>
       <img id="rect-mobile" src="assets/rect.svg">
       <div id="images-container">
-        <img src="./assets/city.png" alt="" srcset="" />
+        <img src="./assets/city.png" alt="" />
         <img src="./assets/cristiano-roberto.png" alt="" />
         <img src="./assets/muroalto.png" alt="" />
       </div>
     </section>
     <section id="diamond-section">
-      <img src="./assets/mockup.png" alt="" srcset="" />
+      <img src="./assets/mockup.png" alt="" />
       <article>
         <div>
           <span>CONHEÇA A</span>
@@ -61,10 +50,13 @@
         <input type="submit" value="Anuncie a sua propriedade" />
       </form>
     </section>
-  </div>
+</div>
 
-  <!-- styles -->
-  <style>
+<!-- 
+1. Copie todo o conteúdo abaixo.
+2. Cole-o dentro da tag <style> do seu projeto.
+-->
+<style>
     /* Reset específico para as tags dentro das seções fornecidas */
     #carousel-section h2,
     #carousel-section p,
@@ -317,7 +309,6 @@
 
       #carousel-section {
         article {
-
           h2,
           p {
             align-self: center;
@@ -342,115 +333,21 @@
         gap: 120px;
       }
 
+      /* Estilizações específicas para as seções */
       #carousel-section {
-        position: relative;
-        width: 100%;
-        justify-content: center;
-
-        #images-container {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-          gap: var(--gap-small);
-
-          img {
-            width: 100%;
-            height: auto;
-          }
-        }
+        background-color: var(--background-dark);
       }
 
       #diamond-section {
-        display: flex;
-        flex-direction: row;
-
-        img {
-          width: clamp(250px, 50vw, 585px);
-          height: clamp(200px, 50vh, 547px);
-        }
-
-        article {
-          width: 434px;
-        }
-      }
-
-      #detail {
-        display: block;
+        background: url("./assets/diamond.png") center no-repeat;
+        background-size: 826.43px auto;
       }
 
       #beach-section {
-        background-image: url("./assets/beach-1.png");
-        background-position: center;
-        background-repeat: no-repeat;
+        height: 600px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 70%),
+          url("./assets/beach-desktop.png") center no-repeat;
         background-size: cover;
-        border-radius: 40px;
-
-        justify-content: flex-start;
-
-        width: clamp(300px, 80vw, 1145px);
-        max-height: 517px;
-        margin-bottom: 60px;
-
-        form {
-          width: 546px;
-          height: min-content;
-
-          align-self: center;
-          margin-left: 35px;
-          margin-top: 0;
-
-          h2 {
-            width: 434px;
-          }
-
-          input {
-            width: 287px;
-            align-self: flex-start;
-          }
-        }
       }
     }
-
-    /* Desktop */
-    @media (min-width: 1440px) {
-      #carousel-section {
-        width: 100%;
-        justify-content: center;
-
-        #images-container {
-          display: grid;
-          grid-template-columns: 390px 390px 390px;
-          gap: var(--gap-small);
-
-          img {
-            width: 100%;
-            height: auto;
-          }
-        }
-
-        article {
-          div {
-            h2 {
-              font-size: 40px;
-            }
-          }
-        }
-      }
-
-      #diamond-section {
-        article {
-          div {
-            span {
-              font-size: 20px;
-            }
-
-            h2 {
-              font-size: 50px;
-            }
-          }
-        }
-      }
-    }
-  </style>
-</body>
-
-</html>
+</style>
