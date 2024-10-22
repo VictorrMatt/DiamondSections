@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <style>
+    #carousel-section h2,
+    #carousel-section p,
+    #carousel-section span,
+    #carousel-section article {
+      margin: 0;
+      padding: 0;
+      font-weight: normal;
+    }
+  </style> <!-- styles -->
+  <style>
+    :root {
+      /* Fonte e cores */
+      --font-family: "Montserrat", sans-serif;
+      --background-dark: #282523;
+      --color-dark: #4b4b4b;
+      --color-gold: #b58034;
+      --color-black: black;
+      --color-white: white;
+      --color-gradient-start: #946223;
+      --color-gradient-middle: #b48538;
+      --color-gradient-end: #cfa34a;
+
+      /* Espaçamentos */
+      --gap-extralarge: 78px;
+      --gap-large: 3rem;
+      --gap-medium: 35px;
+      --gap-custom: 5rem;
+      --gap-small: 20px;
+      /* Tamanhos de fonte */
+      --font-size-h2: 34px;
+      --font-size-p: 20px;
+      --font-size-span: 15px;
+      --font-size-diamond-h2: 30px;
+      --font-size-beach-h2: 34px;
+    }
+
+    /* Geral */
+    html,
+    input {
+      font-family: var(--font-family);
+      border: none;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    #main-carousel,
+    #images-container {
+      display: flex;
+    }
+
+    #main-carousel {
+      flex-direction: column;
+      align-items: center;
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+
+    #carousel-content--holder {
+
+      h2,
+      p,
+      span {
+        color: var(--color-white);
+      }
+    }
+
+    #carousel-detail {
+      display: none;
+      position: absolute;
+      z-index: 1;
+      width: 348px;
+      height: auto;
+      left: 0px;
+      transform: scaleX(-1);
+      /* Posição relativa ao caousel-section */
+    }
+
+    #rect-desktop {
+      display: none !important;
+    }
+
+    /* Carousel Section */
+    #carousel-section {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      border-radius: 40px;
+      gap: var(--gap-small);
+      padding: 90px 24px;
+
+      h2 {
+        font-size: var(--font-size-h2);
+        line-height: 40px;
+        font-weight: 300;
+
+        span {
+          font-weight: bold;
+        }
+      }
+
+      p {
+        font-size: var(--font-size-p);
+        letter-spacing: -0.48px;
+        line-height: 25px;
+        font-weight: 300;
+      }
+
+      article {
+        div {
+          display: flex;
+          flex-direction: column;
+          gap: var(--gap-medium);
+        }
+      }
+
+      #images-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: var(--gap-small);
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      img {
+        border-radius: 20px
+      }
+    }
+
+    /* Tablets e telas maiores */
+    @media (min-width: 769px) {
+      #rect-desktop {
+        display: block !important;
+      }
+
+      #rect-mobile {
+        display: none !important;
+      }
+
+      #carousel-detail {
+        display: block;
+      }
+
+      #carousel-section {
+        article {
+
+          h2,
+          p {
+            align-self: center;
+            text-align: center;
+          }
+
+          div {
+            gap: 11px;
+            align-items: center;
+
+            #rect-desktop {
+              display: inline !important;
+            }
+          }
+        }
+      }
+
+      #main-carousel {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: fit-content;
+      }
+
+      #carousel-section {
+        position: relative;
+        width: 100%;
+        justify-content: center;
+
+        #images-container {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          gap: var(--gap-small);
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+
+    /* Desktop */
+    @media (min-width: 1440px) {
+      #carousel-section {
+        width: 100%;
+        justify-content: center;
+
+        #images-container {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: var(--gap-small);
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        article {
+          div {
+            h2 {
+              font-size: 40px;
+            }
+
+            p {
+              width: 40%;
+            }
+          }
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="carousel-content--holder">
+    <svg id="carousel-detail" width="348" height="573" viewBox="0 0 348 573" fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M302.993 0C302.993 0 210.816 64.352 259.88 173.455C307.729 279.861 331.019 360.522 281.437 469.08C271.655 490.496 266.039 496.174 249.71 511.809C176.036 582.357 11.581 410.821 5.34443 295.729C0.505249 206.201 17.5071 192.408 17.5071 192.408C17.5071 192.408 -30.8848 276.983 33.2409 431.822C81.9433 549.43 137.296 571.105 165.685 572.92C221.012 576.472 314.147 461.561 338.342 307.448C362.513 153.465 337.799 82.5531 302.993 0Z"
+        fill="url(#paint0_linear_7_760)" />
+      <defs>
+        <linearGradient id="paint0_linear_7_760" x1="-0.0123112" y1="286.499" x2="348.021" y2="286.499"
+          gradientUnits="userSpaceOnUse">
+          <stop stop-color="#EFC75F" />
+          <stop offset="0.02" stop-color="#DCAF51" />
+          <stop offset="0.06" stop-color="#C59440" />
+          <stop offset="0.09" stop-color="#B58034" />
+          <stop offset="0.12" stop-color="#AB732D" />
+          <stop offset="0.16" stop-color="#A8702B" />
+          <stop offset="0.2" stop-color="#B17B31" />
+          <stop offset="0.27" stop-color="#C99843" />
+          <stop offset="0.33" stop-color="#E2B756" />
+          <stop offset="0.46" stop-color="#E2B756" />
+          <stop offset="0.47" stop-color="#E2B756" />
+          <stop offset="0.53" stop-color="#D3A74C" />
+          <stop offset="0.64" stop-color="#AE7F34" />
+          <stop offset="0.71" stop-color="#905E21" />
+          <stop offset="0.77" stop-color="#946223" />
+          <stop offset="0.83" stop-color="#A06F2B" />
+          <stop offset="0.9" stop-color="#B48538" />
+          <stop offset="0.96" stop-color="#CFA34A" />
+          <stop offset="1" stop-color="#E2B756" />
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <section id="carousel-section">
+      <article>
+        <div>
+          <div id="rect-desktop"> <svg width="116" height="10" viewBox="0 0 116 10" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <rect width="116" height="10" fill="#B17B31" />
+            </svg> </div>
+          <h2>Deixe o <span>som das ondas</span><br> cuidar do resto</h2>
+          <p> reserve agora e relaxe com o melhor da hospitalidade do litoral nordestino. </p>
+        </div>
+      </article>
+      <div id="rect-mobile"> <svg width="116" height="10" viewBox="0 0 116 10" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <rect width="116" height="10" fill="#B17B31" />
+        </svg> </div>
+      <div id="images-container"> <img src="https://i.imgur.com/6Kf3WFV.png" alt="" srcset="" /> <img
+          src="https://i.imgur.com/jLBHDJN.png" alt="" /> <img src="https://i.imgur.com/YY1RAsa.png" alt="" /> </div>
+    </section>
+  </div>
+</body>
+
+</html>

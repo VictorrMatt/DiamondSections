@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <style>
+    #diamond-section h2,
+    #diamond-section p,
+    #diamond-section span,
+    #diamond-section article {
+      margin: 0;
+      padding: 0;
+      font-weight: normal;
+    }
+  </style> <!-- styles -->
+  <style>
+    #main-diamond {
+      display: flex;
+    }
+
+    #main-diamond {
+      flex-direction: column;
+      align-items: center;
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+
+    #rect-desktop {
+      display: none !important;
+    }
+
+    /* Diamond Section */
+    #diamond-section {
+      width: 100%;
+      margin: 0 24px 130px 0;
+      padding: var(--gap-custom) 0;
+      background: url("https://i.imgur.com/3BSmrEs.png") center no-repeat;
+      background-size: 826.43px auto;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h2,
+      p,
+      span {
+        color: var(--color-dark);
+      }
+
+      article {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        h2 {
+          font-size: var(--font-size-diamond-h2);
+          font-weight: bold;
+          color: var(--color-gold);
+        }
+
+        p {
+          font-size: 17px;
+          letter-spacing: -0.48px;
+          line-height: 25px;
+        }
+
+        span {
+          font-size: var(--font-size-span);
+          color: var(--color-black);
+          font-weight: 500;
+        }
+      }
+
+      img {
+        align-self: center;
+        width: clamp(300px, 50vw, 585.5px);
+        height: auto;
+        border-radius: 20px;
+      }
+    }
+
+    /* Tablets e telas maiores */
+    @media (min-width: 769px) {
+      #rect-desktop {
+        display: block !important;
+      }
+
+      #rect-mobile {
+        display: none !important;
+      }
+
+      #main-diamond {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: fit-content;
+      }
+
+      #diamond-section {
+        display: flex;
+        flex-direction: row;
+
+        img {
+          width: clamp(250px, 50vw, 585px);
+          height: clamp(200px, 50vh, 547px);
+          max-width: 100%;
+          object-fit: contain;
+        }
+
+        article {
+          width: 434px;
+        }
+      }
+
+      #detail {
+        display: block;
+      }
+
+    }
+
+    /* Desktop */
+    @media (min-width: 1440px) {
+      #diamond-section {
+        article {
+          div {
+            span {
+              font-size: 20px;
+            }
+
+            h2 {
+              font-size: 50px;
+            }
+          }
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main-diamond">
+    <section id="diamond-section"> <img src="https://i.imgur.com/Lt3ASFK.png" alt="" srcset="" />
+      <article>
+        <div> <span>CONHEÇA A</span>
+          <h2>Diamond</h2>
+        </div>
+        <p> A Diamond é uma empresa especializada em gestão e locação de imóveis, oferecendo soluções personalizadas
+          para proprietários e locatários. Com foco em qualidade e atendimento exclusivo, a Diamond busca garantir
+          segurança e eficiência em todas as etapas do processo, proporcionando tranquilidade e confiança aos seus
+          clientes. </p>
+      </article>
+    </section>
+  </div>
+</body>
+
+</html>

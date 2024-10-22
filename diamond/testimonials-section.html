@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    #main-testimonial {
+      max-width: 1200px;
+
+      #section-label {
+        margin-bottom: 60px;
+      }
+    }
+
+    #testimonial-section {
+      text-align: center;
+      margin: 0 0 130px 0;
+
+      #section-label {
+        h2 {
+          font-size: 30px;
+          font-weight: 400;
+          color: var(--color-black);
+
+          span {
+            font-weight: bold;
+            color: var(--color-black);
+          }
+        }
+      }
+    }
+
+
+    #first-row {
+      div {
+        h4 {
+          font-size: 25px;
+          font-weight: 500;
+          margin-bottom: 0;
+        }
+
+        p {
+          font-size: 11.5px;
+          letter-spacing: -3%;
+        }
+      }
+    }
+
+    #testimonials-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--gap-medium);
+    }
+
+    .testimonial-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: var(--background-dark);
+      padding: 23px 43px 43px 23px;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    .testimonial-card #first-row {
+      display: flex;
+      align-items: center;
+      align-self: flex-start;
+      text-align: left;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .user-image {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .testimonial-description {
+      font-size: 15px;
+      letter-spacing: 0.6px;
+    }
+
+    /* Media Queries para responsividade */
+    @media (min-width: 768px) {
+      #testimonials-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      #testimonials-container {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main-testimonial">
+    <section id="testimonial-section">
+      <div id="section-label">
+        <h2>
+          Veja como foi <span>a experiência</span> dos nossos hóspedes
+        </h2>
+      </div>
+
+      <div id="testimonials-container">
+        <div class="testimonial-card">
+          <div id="first-row">
+            <img class="user-image"
+              src="https://images.pexels.com/photos/773371/pexels-photo-773371.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Foto de Roberto M." />
+            <div>
+              <h4>Ana Silva</h4>
+              <p>(São Paulo, SP)</p>
+            </div>
+          </div>
+          <p id="testimonial-description">"A Diamond superou minhas expectativas! Atendimento excelente e tudo muito bem
+            organizado. Recomendo para quem quer uma estadia tranquila!"</p>
+        </div>
+
+        <div class="testimonial-card">
+          <div id="first-row">
+            <img class="user-image"
+              src="https://images.pexels.com/photos/5876695/pexels-photo-5876695.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Foto de Roberto M." />
+            <div>
+              <h4>Maria Oliveira</h4>
+              <p>(Salvador, BA)</p>
+            </div>
+          </div>
+          <p id="testimonial-description">"Tive uma estadia incrível na Diamond! O atendimento foi excelente e tudo
+            funcionou perfeitamente. Recomendo para quem busca conforto!"</p>
+        </div>
+
+        <div class="testimonial-card">
+          <div id="first-row">
+            <img class="user-image"
+              src="https://images.pexels.com/photos/7114458/pexels-photo-7114458.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Foto de Roberto M." />
+            <div>
+              <h4>Juliana Costa</h4>
+              <p>(Belo Horizonte, MG)</p>
+            </div>
+          </div>
+          <p id="testimonial-description">"Minha experiência na Diamond foi maravilhosa! A equipe foi atenciosa e a
+            hospedagem, impecável. Super indico para uma viagem relaxante!"</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <style>
+    #carousel-section h2,
+    #carousel-section p,
+    #carousel-section span,
+    #carousel-section article {
+      margin: 0;
+      padding: 0;
+      font-weight: normal;
+    }
+  </style> <!-- styles -->
+  <style>
+    :root {
+      /* Fonte e cores */
+      --font-family: "Montserrat", sans-serif;
+      --background-dark: #F4F4F4;
+      --color-dark: #4b4b4b;
+      --color-gold: #b58034;
+      --color-black: black;
+      --color-white: white;
+      --color-gradient-start: #946223;
+      --color-gradient-middle: #b48538;
+      --color-gradient-end: #cfa34a;
+      /* Espaçamentos */
+      --gap-extralarge: 78px;
+      --gap-large: 3rem;
+      --gap-medium: 35px;
+      --gap-custom: 5rem;
+      --gap-small: 20px;
+      /* Tamanhos de fonte */
+      --font-size-h2: 34px;
+      --font-size-p: 20px;
+      --font-size-span: 15px;
+      --font-size-diamond-h2: 30px;
+      --font-size-beach-h2: 34px;
+    }
+
+    /* Geral */
+    html,
+    input {
+      font-family: var(--font-family);
+      border: none;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    #main-carousel,
+    #images-container {
+      display: flex;
+    }
+
+    #main-carousel {
+      flex-direction: column;
+      align-items: center;
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+
+
+
+    #rect-desktop {
+      display: none !important;
+    }
+
+    /* Carousel Section */
+    #carousel-section {
+      display: grid;
+      border-radius: 40px;
+      gap: var(--gap-small);
+      padding: 90px 24px;
+
+      /* background-image: url(assets/versatil.svg); background-position: calc(-250px) center; background-repeat: no-repeat; */
+      h2 {
+        font-size: var(--font-size-h2);
+        line-height: 40px;
+        font-weight: 300;
+
+        span {
+          font-weight: bold;
+        }
+      }
+
+      p {
+        font-size: var(--font-size-p);
+        letter-spacing: -0.48px;
+        line-height: 25px;
+        font-weight: 300;
+      }
+
+      article {
+        div {
+          display: flex;
+          flex-direction: column;
+          gap: var(--gap-medium);
+        }
+      }
+
+      #images-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: var(--gap-small);
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      img {
+        border-radius: 20px
+      }
+    }
+
+    /* Tablets e telas maiores */
+    @media (min-width: 769px) {
+      #rect-desktop {
+        display: block !important;
+      }
+
+      #rect-mobile {
+        display: none !important;
+      }
+
+      #carousel-section {
+        article {
+
+          h2,
+          p {
+            align-self: center;
+            text-align: center;
+          }
+
+          div {
+            gap: 11px;
+            align-items: center;
+
+            #rect-desktop {
+              display: inline !important;
+            }
+          }
+        }
+      }
+
+      #main-carousel {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: fit-content;
+      }
+
+      #carousel-section {
+        position: relative;
+        width: 100%;
+        justify-content: center;
+
+        h2,
+        p,
+        span {
+          color: var(--color-dark);
+        }
+
+        #images-container {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          gap: var(--gap-small);
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+
+    /* Desktop */
+    @media (min-width: 1440px) {
+      #carousel-section {
+        width: 100%;
+        justify-content: center;
+
+        #images-container {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: var(--gap-small);
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        article {
+          div {
+            h2 {
+              font-size: 40px;
+            }
+
+            p {
+              width: 40%;
+            }
+          }
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main-carousel">
+    <section id="carousel-section">
+      <article>
+        <div>
+          <div id="rect-desktop"> <svg width="116" height="10" viewBox="0 0 116 10" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <rect width="116" height="10" fill="#B17B31" />
+            </svg> </div>
+          <h2>Deixe o <span>som das ondas</span><br> cuidar do resto</h2>
+          <p> reserve agora e relaxe com o melhor da hospitalidade do litoral nordestino. </p>
+        </div>
+      </article>
+      <div id="rect-mobile"> <svg width="116" height="10" viewBox="0 0 116 10" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <rect width="116" height="10" fill="#B17B31" />
+        </svg> </div>
+      <div id="images-container"> <img src="https://i.imgur.com/x6J2Q29.png" alt="" srcset="" /> <img
+          src="https://i.imgur.com/jhW6dAL.png" alt="" /> <img src="https://i.imgur.com/yd9s0pK.png" alt="" /> </div>
+    </section>
+  </div>
+</body>
+
+</html>

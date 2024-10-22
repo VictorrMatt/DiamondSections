@@ -1,0 +1,150 @@
+/* ==========================
+General Styles
+========================== */
+
+/* advertisements */
+#anuncio_grid {
+  margin: 90px 0;
+}
+
+.panel {
+  margin: 0;
+}
+
+/* Swiper slide styles */
+.swiper-slide div {
+  padding: 0 3rem !important;
+}
+
+/* ==========================
+Menu Styles
+========================== */
+/* Estilizar todos os spans */
+.row.menu-top span {
+  color: white;
+}
+
+/* Sobrescrever o estilo para spans dentro de .dropdown-menu */
+.row.menu-top .dropdown-menu span {
+  color: inherit; /* Voltar para o estilo padrão */
+}
+
+/* Gap entre as abas do form */
+.row.nav-tabs {
+  display: flex; /* Ativa o modelo flexbox */
+  gap: 5px; /* Adiciona um espaço de 5px entre os itens */
+}
+
+/* advertisements cards */
+.row.nav-tabs li {
+  list-style: none; /* Remove marcadores de lista, se houver */
+}
+
+/* Result card styles */
+.resultcard {
+  height: 300px; /* Tamanho desejado */
+  height: min-content; /* Ajusta a altura para o conteúdo */
+  overflow: visible; /* Visível por padrão */
+}
+
+/* Espaço vertical entre os anúncios */
+.appThumb {
+  margin-bottom: 40px; /* Ajuste o valor conforme necessário */
+}
+
+/* Remove a margem inferior do último item para evitar espaço extra */
+.appThumb:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================
+Footer Styles
+========================== */
+/* Lógica padrão para ocultar o footer-logo em mobile */
+#footer-logo {
+  display: none; /* Oculte o SVG por padrão */
+  margin-bottom: 40px;
+}
+
+footer .footer-all > div:first-child {
+  padding: 70px 15px !important;
+}
+
+footer .footer-all > .copyright {
+  padding: 26px 10px !important;
+  background-color: #353535;
+}
+
+.copyright .container .row .col-sm-6 #copyright-name {
+  font-weight: 400;
+}
+
+.copyright .container .row .col-sm-6 p {
+  font-weight: 400;
+}
+
+/* ==========================
+Media Queries
+========================== */
+@media (min-width: 992px) {
+  #header {
+    padding: 26px 0;
+  }
+
+  /* advertisements */
+  #anuncio_grid {
+    margin: 230px 0 80px 0;
+  }
+
+  /* ==========================
+	Banner Styles
+	========================== */
+  .swiper-container,
+  .swiper-wrapper {
+    overflow: visible !important;
+  }
+
+  .container-content .row-content .search-box:nth-child(2) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto; /* Alinha ao centro */
+    transform: translateY(106px);
+    height: 270px;
+  }
+
+  .container-content .row-content .search-box:nth-child(2) .tab-content {
+    height: -webkit-fill-available;
+    border-radius: 5px;
+
+    /* Box Shadow */
+    -webkit-box-shadow: 4px 6px 6px 0px rgba(0, 0, 0, 0.09);
+    -moz-box-shadow: 4px 6px 6px 0px rgba(0, 0, 0, 0.09);
+    box-shadow: 4px 6px 6px 0px rgba(0, 0, 0, 0.09);
+  }
+
+  #footer-logo {
+    display: block; /* Exibe o SVG em desktop */
+  }
+
+  .row.menu-top {
+    position: absolute;
+    display: flex; /* Ativa o flexbox */
+    justify-content: flex-end; /* Alinha os itens à direita */
+    gap: 20px; /* Adiciona um espaço (gap) entre os itens */
+    top: 40px;
+    right: 0;
+  }
+
+  /* Define opacidade inicial nos itens */
+  .row.menu-top .menu-top-item {
+    opacity: 0.4;
+    transition: opacity 0.3s ease; /* Transição suave para a opacidade */
+  }
+
+  /* Aplica o hover individualmente em cada item */
+  .row.menu-top .menu-top-item:hover {
+    opacity: 1;
+  }
+}
